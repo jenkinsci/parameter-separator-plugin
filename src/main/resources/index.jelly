@@ -1,0 +1,12 @@
+<!--
+ Copyright (c) 2014 Mike Chmielewski
+ See the file license.txt for copying permission. 
+-->
+
+
+<!--
+  This view is used to render the plugin list page.
+-->
+<div>
+  Adds a static horizontal rule html tag as a Jenkins parameter
+</div>

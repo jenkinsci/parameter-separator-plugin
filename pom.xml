@@ -18,26 +18,13 @@
 		<developer>
 			<id>olhado</id>
 			<name>Mike Chmielewski</name>
+			<email>code@mikec.123mail.org</email>
 		</developer>
 	</developers>
 
 	<dependencies>
 	</dependencies>
 
-	<!-- get every artifact through maven.glassfish.org, which proxies all the artifacts that we need -->
-	<repositories>
-		<repository>
-			<id>repo.jenkins-ci.org</id>
-			<url>http://repo.jenkins-ci.org/public/</url>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>repo.jenkins-ci.org</id>
-			<url>http://repo.jenkins-ci.org/public/</url>
-		</pluginRepository>
-	</pluginRepositories>
 	<distributionManagement>
 		<repository>
 		<id>maven.jenkins-ci.org</id>

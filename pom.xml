@@ -4,13 +4,11 @@
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
 		<version>1.532.2</version>
-		<!-- which version of Jenkins is this plugin built against? -->
-		<relativePath />
 	</parent>
 
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
-	<version>0.1-SNAPSHOT</version>
+	<version>1-SNAPSHOT</version>
 	<name>Parameter Separator Plugin</name>
 	<url>http://wiki.jenkins-ci.org/display/JENKINS/ZZZZ</url>
 
@@ -32,7 +30,7 @@
 	</repository>
 	</distributionManagement>
 	<scm>
-		<connection>scm:git:ssh://git@github.com/olhado/parameter-separator-plugin.git</connection>
+		<connection>scm:git:ssh://github.com/olhado/parameter-separator-plugin.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/olhado/parameter-separator-plugin.git</developerConnection>
 		<url>https://github.com/olhado/parameter-separator-plugin</url>
 	</scm>

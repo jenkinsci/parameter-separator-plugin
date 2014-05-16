@@ -7,6 +7,6 @@
   xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
   xmlns:i="jelly:fmt" xmlns:p="/lib/hudson/project">
   <f:entry title="${it.value}" description="${it.description}">
-    ${it.value}
+    ${it.value} zz
   </f:entry>
 </j:jelly>

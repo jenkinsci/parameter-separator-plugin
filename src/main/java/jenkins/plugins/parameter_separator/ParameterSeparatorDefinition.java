@@ -28,7 +28,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 		}
 	}
 
-	private static final String SEPARATOR_ELEMENT = "<hr style=\"${SEPARATOR_STYLE}\" />";
+	private static final String SEPARATOR_ELEMENT = "<hr style=\"SEPARATOR_STYLE\" />";
 	private static final String SEPARATOR_STYLE = "margin-top:10px;margin-bottom:10px;";
 
 	public ParameterValue getDefaultParameterValue() {
@@ -37,7 +37,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 
 	@DataBoundConstructor
 	public ParameterSeparatorDefinition(final String name) {
-		super("separator-" + UUID.randomUUID().toString());
+		super(name + "-separator-" + UUID.randomUUID().toString());
 	}
 
 	@Override
@@ -51,6 +51,6 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 	}
 
 	private String buildSeparatorElement() {
-		return SEPARATOR_ELEMENT.replace("${SEPARATOR_STYLE}", SEPARATOR_STYLE);
+		return SEPARATOR_ELEMENT.replace("SEPARATOR_STYLE", SEPARATOR_STYLE);
 	}
 }

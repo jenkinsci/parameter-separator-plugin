@@ -28,16 +28,18 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 		}
 	}
 
+	private static final String DEFAULT_SEPARATOR_ELEMENT = "<hr style=\"margin-top:10px;margin-bottom:10px;\" />";
 	private static final String SEPARATOR_ELEMENT = "<hr style=\"SEPARATOR_STYLE\" />";
 	private static final String SEPARATOR_STYLE = "margin-top:10px;margin-bottom:10px;";
 
+	@Override
 	public ParameterValue getDefaultParameterValue() {
 		return new ParameterSeparatorValue(getName(), buildSeparatorElement());
 	}
 
 	@DataBoundConstructor
 	public ParameterSeparatorDefinition(final String name) {
-		super(name + "-separator-" + UUID.randomUUID().toString());
+		super("separator-" + UUID.randomUUID().toString());
 	}
 
 	@Override

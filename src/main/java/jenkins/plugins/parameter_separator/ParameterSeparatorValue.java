@@ -15,5 +15,4 @@ public class ParameterSeparatorValue extends StringParameterValue{
 	public ParameterSeparatorValue(final String name, final String value) {
 		super(name, value);
 	}
-
 }

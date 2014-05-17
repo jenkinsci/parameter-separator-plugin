@@ -22,19 +22,49 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 	@Extension
 	public static class ParameterSeparatorDescriptor extends ParameterDescriptor {
 		
+		private String separatorStyle;
+
+		private static final String SEPARATOR_TEMPLATE = "<hr style=\"STYLE_HERE\" />";
+
+		public static final String defaultSeparatorStyle = "margin-top:10px; margin-bottom:10px;";
+
+		public ParameterSeparatorDescriptor() {
+			load();
+		}
+
+		 @Override
+        public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
+            req.bindJSON(this, json.getJSONObject("parameter_separator"));
+            save();
+            return true;
+        }
+
 		@Override
 		public String getDisplayName() {
 			return Messages.ParameterSeparatorDefinition_DisplayName();
 		}
-	}
 
-	private static final String DEFAULT_SEPARATOR_ELEMENT = "<hr style=\"margin-top:10px;margin-bottom:10px;\" />";
-	private static final String SEPARATOR_ELEMENT = "<hr style=\"SEPARATOR_STYLE\" />";
-	private static final String SEPARATOR_STYLE = "margin-top:10px;margin-bottom:10px;";
+      	public String getSeparatorStyle() {
+            return separatorStyle;
+        }
+
+        public void setSeparatorStyle(final String s) {
+        	separatorStyle = s;
+        }
+
+        public String getSeparator() {
+        	if (separatorStyle != null && separatorStyle.length() > 0) {
+        		return SEPARATOR_TEMPLATE.replace("STYLE_HERE", separatorStyle);
+        	}
+        	else {
+        		return SEPARATOR_TEMPLATE.replace("STYLE_HERE", defaultSeparatorStyle);
+        	}
+        }
+	}
 
 	@Override
 	public ParameterValue getDefaultParameterValue() {
-		return new ParameterSeparatorValue(getName(), buildSeparatorElement());
+		return null;
 	}
 
 	@DataBoundConstructor
@@ -52,7 +82,12 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 		return null;
 	}
 
-	private String buildSeparatorElement() {
-		return SEPARATOR_ELEMENT.replace("SEPARATOR_STYLE", SEPARATOR_STYLE);
-	}
+	   public String getSeparator() {
+        return getDescriptor().getSeparator();
+    }
+
+    @Override
+    public ParameterSeparatorDescriptor getDescriptor() {
+        return (ParameterSeparatorDescriptor) super.getDescriptor();
+    }
 }

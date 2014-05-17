@@ -44,12 +44,12 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 
 	@Override
 	public ParameterValue createValue(final StaplerRequest request) {
-		return new ParameterSeparatorValue(getName(), buildSeparatorElement());
+		return null;
 	}
 
 	@Override
 	public ParameterValue createValue(final StaplerRequest request, final JSONObject jObj) {
-		return new ParameterSeparatorValue(getName(), buildSeparatorElement());
+		return null;
 	}
 
 	private String buildSeparatorElement() {

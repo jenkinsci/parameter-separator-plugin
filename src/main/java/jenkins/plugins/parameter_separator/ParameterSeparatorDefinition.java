@@ -1,5 +1,4 @@
 /*
- *Copyright (c) 2013 Costco, Vimil Saju
  *Copyright (c) 2014 Mike Chmielewski
  *See the file license.txt for copying permission.
  */
@@ -23,42 +22,42 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 	public static class ParameterSeparatorDescriptor extends ParameterDescriptor {
 		
 		private String separatorStyle;
-
+	
 		private static final String SEPARATOR_TEMPLATE = "<hr style=\"STYLE_HERE\" />";
-
+	
 		public static final String defaultSeparatorStyle = "margin-top:10px; margin-bottom:10px;";
-
+	
 		public ParameterSeparatorDescriptor() {
-			load();
+		    load();
 		}
-
-		 @Override
-        public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
-            req.bindJSON(this, json.getJSONObject("parameter_separator"));
-            save();
-            return true;
-        }
-
+	
+		@Override
+	    public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
+	        req.bindJSON(this, json.getJSONObject("parameter_separator"));
+	        save();
+	        return true;
+	    }
+	
 		@Override
 		public String getDisplayName() {
-			return Messages.ParameterSeparatorDefinition_DisplayName();
+		    return Messages.ParameterSeparatorDefinition_DisplayName();
 		}
-
+	
       	public String getSeparatorStyle() {
             return separatorStyle;
         }
 
         public void setSeparatorStyle(final String s) {
-        	separatorStyle = s;
+	        separatorStyle = s;
         }
 
         public String getSeparator() {
-        	if (separatorStyle != null && separatorStyle.length() > 0) {
-        		return SEPARATOR_TEMPLATE.replace("STYLE_HERE", separatorStyle);
-        	}
-        	else {
-        		return SEPARATOR_TEMPLATE.replace("STYLE_HERE", defaultSeparatorStyle);
-        	}
+    	    if (separatorStyle != null && separatorStyle.length() > 0) {
+ 		        return SEPARATOR_TEMPLATE.replace("STYLE_HERE", separatorStyle);
+	        }
+	        else {
+		        return SEPARATOR_TEMPLATE.replace("STYLE_HERE", defaultSeparatorStyle);
+	        }
         }
 	}
 
@@ -82,7 +81,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 		return null;
 	}
 
-	   public String getSeparator() {
+    public String getSeparator() {
         return getDescriptor().getSeparator();
     }
 

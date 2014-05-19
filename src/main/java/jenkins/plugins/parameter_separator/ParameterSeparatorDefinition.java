@@ -61,24 +61,24 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
         }
 	}
 
-	@Override
-	public ParameterValue getDefaultParameterValue() {
-		return null;
-	}
-
 	@DataBoundConstructor
 	public ParameterSeparatorDefinition(final String name) {
 		super("separator-" + UUID.randomUUID().toString());
 	}
 
 	@Override
+	public ParameterValue getDefaultParameterValue() {
+		return new ParameterSeparatorValue(getName(), getName());
+	}
+
+	@Override
 	public ParameterValue createValue(final StaplerRequest request) {
-		return null;
+		return new ParameterSeparatorValue(getName(), getName());
 	}
 
 	@Override
 	public ParameterValue createValue(final StaplerRequest request, final JSONObject jObj) {
-		return null;
+		return new ParameterSeparatorValue(getName(), getName());
 	}
 
     public String getSeparator() {

@@ -10,7 +10,7 @@
 	<packaging>hpi</packaging>
 	<version>0.1-SNAPSHOT</version>
 	<name>Parameter Separator Plugin</name>
-	<url>http://wiki.jenkins-ci.org/display/JENKINS/ZZZZ</url>
+	<url>http://wiki.jenkins-ci.org/display/JENKINS/Parameter+Separator+Plugin</url>
 
 	<developers>
 		<developer>

@@ -6,6 +6,8 @@
 		<version>1.532.2</version>
 	</parent>
 
+	
+	<groupId>jenkins.plugins</groupId>
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
 	<version>0.2-SNAPSHOT</version>

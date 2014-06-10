@@ -6,8 +6,6 @@
 		<version>1.532.2</version>
 	</parent>
 
-	
-	<groupId>jenkins.plugins</groupId>
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
 	<version>0.3-SNAPSHOT</version>
@@ -30,14 +28,14 @@
 
 	<distributionManagement>
 		<repository>
-		<id>maven.jenkins-ci.org</id>
-		<url>http://maven.jenkins-ci.org/content/repositories/releases/</url>
-	</repository>
+			<id>maven.jenkins-ci.org</id>
+			<url>http://maven.jenkins-ci.org/content/repositories/releases/</url>
+		</repository>
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:ssh://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git</developerConnection>
-		<url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
+		<connection>scm:git:ssh://github.com/jenkinsci/parameter-separator-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/parameter-separator-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
 	</scm>
 </project>

@@ -8,7 +8,7 @@
 
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.2-SNAPSHOT</version>
 	<name>Parameter Separator Plugin</name>
 	<url>https://wiki.jenkins-ci.org/x/W4BWB</url>
 

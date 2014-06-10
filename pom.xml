@@ -19,6 +19,9 @@
 			<id>olhado</id>
 			<name>Mike Chmielewski</name>
 			<email>code@mikec.123mail.org</email>
+			<roles>
+                		<role>maintainer</role>
+            		</roles>
 		</developer>
 	</developers>
 
@@ -33,8 +36,8 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:ssh://github.com/jenkinsci/parameter-separator-plugin.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/parameter-separator-plugin.git</developerConnection>
-		<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
+		<connection>scm:git:ssh://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
 	</scm>
 </project>

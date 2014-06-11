@@ -8,7 +8,7 @@
 
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
-	<version>0.4-SNAPSHOT</version>
+	<version>0.5-SNAPSHOT</version>
 	<name>Parameter Separator Plugin</name>
 	<url>https://wiki.jenkins-ci.org/x/W4BWB</url>
 
@@ -26,17 +26,21 @@
 	<dependencies>
 	</dependencies>
 	
-	<plugin>
-		<artifactId>maven-release-plugin</artifactId>
-		<version>2.5</version>
-		<dependencies>
-			<dependency>
-				<groupId>org.apache.maven.scm</groupId>
-				<artifactId>maven-scm-provider-gitexe</artifactId>
-				<version>1.9</version>
-			</dependency>
-		</dependencies>
-	</plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.9</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
 
 	<distributionManagement>
 		<repository>

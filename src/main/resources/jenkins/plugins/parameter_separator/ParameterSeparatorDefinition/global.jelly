@@ -6,8 +6,8 @@
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
 
   <f:section title="Parameter Separator" name="parameter_separator">
-      <f:entry title="Configure custom CSS for parameter separator" field="separatorStyle">
-        <f:textbox value="${descriptor.separatorStyle}"  default="${descriptor.defaultSeparatorStyle}"/>
+      <f:entry title="Configure global custom CSS" field="globalSeparatorStyle">
+        <f:textbox value="${descriptor.globalSeparatorStyle}"  default="${descriptor.globalSeparatorStyle}"/>
       </f:entry>
   </f:section>
 

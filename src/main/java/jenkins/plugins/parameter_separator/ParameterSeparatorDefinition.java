@@ -21,11 +21,9 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     @Extension
     public static class ParameterSeparatorDescriptor extends ParameterDescriptor {
 
-        private String separatorStyle;
+        private String globalSeparatorStyle = "";
 
-        private static final String SEPARATOR_TEMPLATE = "<hr style=\"STYLE_HERE\" />";
-
-        public static final String DEFAULT_SEPARATOR_STYLE = "margin-top:10px; margin-bottom:10px;";
+        private static final String DEFAULT_SEPARATOR_STYLE = "margin-top:10px; margin-bottom:10px;";
 
         public ParameterSeparatorDescriptor() {
             load();
@@ -43,25 +41,21 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
             return Messages.ParameterSeparatorDefinition_DisplayName();
         }
 
-        public String getSeparatorStyle() {
-            return separatorStyle;
+        public String getGlobalSeparatorStyle() {
+            return globalSeparatorStyle.equals("") ? getGlobalDefaultSeparatorStyle() : globalSeparatorStyle;
         }
 
-        public void setSeparatorStyle(final String s) {
-            separatorStyle = s;
+        public String getGlobalDefaultSeparatorStyle() {
+            return DEFAULT_SEPARATOR_STYLE;
         }
 
-        public String getSeparator() {
-            if (separatorStyle != null && separatorStyle.length() > 0) {
-                return SEPARATOR_TEMPLATE.replace("STYLE_HERE", separatorStyle);
-            } else {
-                return SEPARATOR_TEMPLATE.replace("STYLE_HERE", DEFAULT_SEPARATOR_STYLE);
-            }
+        public void setGlobalSeparatorStyle(final String s) {
+            globalSeparatorStyle = s;
         }
 
         @Override
         public ParameterSeparatorDefinition newInstance(final StaplerRequest request, final JSONObject jObj) {
-            return new ParameterSeparatorDefinition("", jObj.getString("sectionHeader"), jObj.getString("sectionHeaderStyle"));
+            return new ParameterSeparatorDefinition("", jObj.getString("separatorStyle"), jObj.getString("sectionHeader"), jObj.getString("sectionHeaderStyle"));
         }
     }
 
@@ -85,12 +79,23 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
         this.sectionHeaderStyle = shs;
     }
 
+    private String separatorStyle = "";
+
+     public String getSeparatorStyle() {
+        return this.separatorStyle.equals("") ? getDescriptor().getGlobalSeparatorStyle() : this.separatorStyle;
+    }
+
+    public void setSeparatorStyle(final String ss) {
+        this.separatorStyle = ss;
+    }   
+
     @DataBoundConstructor
-    public ParameterSeparatorDefinition(final String name, final String sectionHeader, final String sectionHeaderStyle) {
+    public ParameterSeparatorDefinition(final String name, final String separatorStyle, final String sectionHeader, final String sectionHeaderStyle) {
         super("separator-" + UUID.randomUUID().toString(), "");
 
         this.sectionHeader = sectionHeader;
         this.sectionHeaderStyle = sectionHeaderStyle;
+        this.separatorStyle = separatorStyle;
     }
 
     @Override
@@ -108,10 +113,6 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     @Override
     public ParameterValue createValue(final StaplerRequest request, final JSONObject jObj) {
         return new ParameterSeparatorValue(getName(), "");
-    }
-
-    public String getSeparator() {
-        return getDescriptor().getSeparator();
     }
 
     @Override

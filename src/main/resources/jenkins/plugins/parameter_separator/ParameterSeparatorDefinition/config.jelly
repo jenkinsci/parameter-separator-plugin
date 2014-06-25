@@ -7,7 +7,7 @@
     <f:entry title="Separator Style" field="separatorStyle">
         <f:textbox />
     </f:entry>
-    <f:entry title="Section Header" field="sectionHeader">
+    <f:entry title="Section Header Text" field="sectionHeader">
         <f:textbox />
     </f:entry>
     <f:entry title="Section Header Style" field="sectionHeaderStyle">

@@ -42,15 +42,19 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
         }
 
         public String getGlobalSeparatorStyle() {
+            return globalSeparatorStyle;
+        }
+
+        public void setGlobalSeparatorStyle(final String gss) {
+            globalSeparatorStyle = gss;
+        }
+
+        public String getComputedGlobalSeparatorStyle() {
             return globalSeparatorStyle.equals("") ? getGlobalDefaultSeparatorStyle() : globalSeparatorStyle;
         }
 
-        public String getGlobalDefaultSeparatorStyle() {
+        private String getGlobalDefaultSeparatorStyle() {
             return DEFAULT_SEPARATOR_STYLE;
-        }
-
-        public void setGlobalSeparatorStyle(final String s) {
-            globalSeparatorStyle = s;
         }
 
         @Override
@@ -62,7 +66,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     private String sectionHeader = "";
 
     public String getSectionHeader() {
-        return this.sectionHeader;
+        return sectionHeader;
     }
 
     public void setSectionHeader(final String sh) {
@@ -72,7 +76,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     private String sectionHeaderStyle = "";
 
     public String getSectionHeaderStyle() {
-        return this.sectionHeaderStyle;
+        return sectionHeaderStyle;
     }
 
     public void setSectionHeaderStyle(final String shs) {
@@ -82,7 +86,11 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     private String separatorStyle = "";
 
      public String getSeparatorStyle() {
-        return this.separatorStyle.equals("") ? getDescriptor().getGlobalSeparatorStyle() : this.separatorStyle;
+        return separatorStyle;
+    }
+
+    public String getComputedSeparatorStyle() {
+        return this.separatorStyle.equals("") ? getDescriptor().getComputedGlobalSeparatorStyle() : this.separatorStyle;
     }
 
     public void setSeparatorStyle(final String ss) {
@@ -93,9 +101,9 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     public ParameterSeparatorDefinition(final String name, final String separatorStyle, final String sectionHeader, final String sectionHeaderStyle) {
         super("separator-" + UUID.randomUUID().toString(), "");
 
+        this.separatorStyle = separatorStyle;
         this.sectionHeader = sectionHeader;
         this.sectionHeaderStyle = sectionHeaderStyle;
-        this.separatorStyle = separatorStyle;
     }
 
     @Override

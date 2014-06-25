@@ -7,7 +7,7 @@
 
   <f:section title="Parameter Separator" name="parameter_separator">
       <f:entry title="Configure global custom CSS" field="globalSeparatorStyle">
-        <f:textbox value="${descriptor.globalSeparatorStyle}"  default="${descriptor.globalSeparatorStyle}"/>
+        <f:textbox value="${descriptor.globalSeparatorStyle}"  default="${descriptor.computedGlobalSeparatorStyle}"/>
       </f:entry>
   </f:section>
 

@@ -7,7 +7,7 @@
   xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
   xmlns:i="jelly:fmt" xmlns:p="/lib/hudson/project">
   <f:entry title="" description="">
-    <hr style="${it.separatorStyle}" />
+    <hr style="${it.computedSeparatorStyle}" />
     <j:if test="${it.sectionHeader != null and it.sectionHeader != ''}">
     <div style="${it.sectionHeaderStyle}">${it.sectionHeader}</div>
     </j:if>

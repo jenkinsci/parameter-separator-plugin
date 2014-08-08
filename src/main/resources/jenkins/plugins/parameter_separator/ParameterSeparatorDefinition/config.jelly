@@ -4,13 +4,16 @@
 -->
 
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-    <f:entry title="Separator Style" field="separatorStyle">
-        <f:textbox />
-    </f:entry>
-    <f:entry title="Section Header Text" field="sectionHeader">
-        <f:textbox />
-    </f:entry>
-    <f:entry title="Section Header Style" field="sectionHeaderStyle">
-        <f:textbox />
-    </f:entry>
+    <f:advanced title="Separator Styling...">
+        <f:entry title="Separator Style" field="separatorStyle">
+            <f:textbox />
+        </f:entry>
+        <f:entry title="Section Header Text" field="sectionHeader">
+            <f:textbox />
+        </f:entry>
+        <f:entry title="Section Header Style" field="sectionHeaderStyle">
+            <f:textbox />
+        </f:entry>
+    </f:advanced>
+    <br />
 </j:jelly>

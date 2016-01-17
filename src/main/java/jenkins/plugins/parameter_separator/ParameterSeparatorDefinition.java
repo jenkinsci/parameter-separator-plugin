@@ -109,18 +109,20 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     @Override
     public ParameterValue getDefaultParameterValue() {
         // TODO: Should load a default, not hard-code it
-        return new ParameterSeparatorValue(getName(), "");
+        return new ParameterSeparatorValue(getName()
+        								, getComputedSeparatorStyle()
+        								, getSectionHeader()
+        								, getSectionHeaderStyle());
     }
 
     @Override
     public ParameterValue createValue(final StaplerRequest request) {
-        String[] requestFields = request.getParameterValues(getName());
-        return new ParameterSeparatorValue(getName(), "");
+        return getDefaultParameterValue();
     }
 
     @Override
     public ParameterValue createValue(final StaplerRequest request, final JSONObject jObj) {
-        return new ParameterSeparatorValue(getName(), "");
+        return getDefaultParameterValue();
     }
 
     @Override

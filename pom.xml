@@ -8,7 +8,7 @@
 
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Parameter Separator Plugin</name>
 	<url>https://wiki.jenkins-ci.org/x/W4BWB</url>
 
@@ -46,7 +46,7 @@
 		<connection>scm:git:ssh://github.com/jenkinsci/parameter-separator-plugin.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/parameter-separator-plugin.git</developerConnection>
 		<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
-	  <tag>HEAD</tag>
+	  <tag>parameter-separator-1.0</tag>
 	</scm>
 	<!-- save the effort that configuration in %MAVEN_HOME%/conf/settings.xml -->
 	<repositories>

@@ -57,7 +57,7 @@ public class ParameterSeparatorValue extends ParameterValue {
         return getName();
     }
 
-    @Override
+    @Nonnull
     public String getValue() {
         return toString();
     }

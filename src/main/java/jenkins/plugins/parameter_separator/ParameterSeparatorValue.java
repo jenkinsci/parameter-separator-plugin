@@ -56,4 +56,9 @@ public class ParameterSeparatorValue extends ParameterValue {
     public String getShortDescription() {
         return getName();
     }
+
+    @Override
+    public Object getValue() {
+        return toString();
+    }
 }

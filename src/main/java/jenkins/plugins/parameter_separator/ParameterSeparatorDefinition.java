@@ -14,6 +14,9 @@ import hudson.model.ParameterDefinition;
 import hudson.util.FormValidation;
 
 import org.kohsuke.stapler.*;
+
+import com.google.common.base.Strings;
+
 import net.sf.json.JSONObject;
 
 public class ParameterSeparatorDefinition extends ParameterDefinition {
@@ -99,7 +102,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 
     @DataBoundConstructor
     public ParameterSeparatorDefinition(final String name, final String separatorStyle, final String sectionHeader, final String sectionHeaderStyle) {
-        super("separator-" + UUID.randomUUID().toString(), "");
+        super(Strings.isNullOrEmpty(name) ? "separator-" + UUID.randomUUID().toString() : name, "");
 
         this.separatorStyle = separatorStyle;
         this.sectionHeader = sectionHeader;

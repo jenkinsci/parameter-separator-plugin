@@ -24,6 +24,11 @@
 	</developers>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.jenkins-ci</groupId>
+			<artifactId>symbol-annotation</artifactId>
+			<version>1.14</version>
+		</dependency>
 	</dependencies>
 	
 	<build>

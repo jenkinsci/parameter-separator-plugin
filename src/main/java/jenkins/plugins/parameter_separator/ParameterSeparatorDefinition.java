@@ -13,6 +13,7 @@ import hudson.model.ParameterValue;
 import hudson.model.ParameterDefinition;
 import hudson.util.FormValidation;
 
+import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.*;
 
 import com.google.common.base.Strings;
@@ -22,6 +23,7 @@ import net.sf.json.JSONObject;
 public class ParameterSeparatorDefinition extends ParameterDefinition {
 
     @Extension
+    @Symbol("separator")
     public static class ParameterSeparatorDescriptor extends ParameterDescriptor {
 
         private String globalSeparatorStyle = "";

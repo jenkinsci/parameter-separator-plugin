@@ -5,21 +5,20 @@
 
 package jenkins.plugins.parameter_separator;
 
-import java.util.Date;
 import java.util.UUID;
 
-import hudson.Extension;
-import hudson.model.ParameterValue;
-import hudson.model.ParameterDefinition;
-import hudson.util.FormValidation;
-
 import org.jenkinsci.Symbol;
-import org.kohsuke.stapler.*;
+import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.StaplerRequest;
 
 import com.google.common.base.Strings;
 
+import hudson.Extension;
+import hudson.model.ParameterDefinition;
+import hudson.model.ParameterValue;
 import net.sf.json.JSONObject;
 
+@SuppressWarnings("serial")
 public class ParameterSeparatorDefinition extends ParameterDefinition {
 
     @Extension
@@ -64,7 +63,8 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 
         @Override
         public ParameterSeparatorDefinition newInstance(final StaplerRequest request, final JSONObject jObj) {
-            return new ParameterSeparatorDefinition("", jObj.getString("separatorStyle"), jObj.getString("sectionHeader"), jObj.getString("sectionHeaderStyle"));
+            return new ParameterSeparatorDefinition("", jObj.getString("separatorStyle"),
+                    jObj.getString("sectionHeader"), jObj.getString("sectionHeaderStyle"));
         }
     }
 
@@ -90,7 +90,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 
     private String separatorStyle = "";
 
-     public String getSeparatorStyle() {
+    public String getSeparatorStyle() {
         return separatorStyle;
     }
 
@@ -100,10 +100,11 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
 
     public void setSeparatorStyle(final String ss) {
         this.separatorStyle = ss;
-    }   
+    }
 
     @DataBoundConstructor
-    public ParameterSeparatorDefinition(final String name, final String separatorStyle, final String sectionHeader, final String sectionHeaderStyle) {
+    public ParameterSeparatorDefinition(final String name, final String separatorStyle, final String sectionHeader,
+            final String sectionHeaderStyle) {
         super(Strings.isNullOrEmpty(name) ? "separator-" + UUID.randomUUID().toString() : name, "");
 
         this.separatorStyle = separatorStyle;
@@ -114,10 +115,8 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     @Override
     public ParameterValue getDefaultParameterValue() {
         // TODO: Should load a default, not hard-code it
-        return new ParameterSeparatorValue(getName()
-        								, getComputedSeparatorStyle()
-        								, getSectionHeader()
-        								, getSectionHeaderStyle());
+        return new ParameterSeparatorValue(getName(), getComputedSeparatorStyle(), getSectionHeader(),
+                getSectionHeaderStyle());
     }
 
     @Override

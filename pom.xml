@@ -13,7 +13,7 @@
 	<packaging>hpi</packaging>
 	<version>1.2-SNAPSHOT</version>
 	<name>Parameter Separator Plugin</name>
-	<url>https://wiki.jenkins-ci.org/x/W4BWB</url>
+	<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
 
 	<properties>
 			<jenkins.version>2.164.1</jenkins.version>

@@ -1,9 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.532.2</version>
+		<version>4.4</version>
+		<relativePath />
 	</parent>
 
 	<artifactId>parameter-separator</artifactId>
@@ -12,48 +15,29 @@
 	<name>Parameter Separator Plugin</name>
 	<url>https://wiki.jenkins-ci.org/x/W4BWB</url>
 
+	<properties>
+			<jenkins.version>2.164.1</jenkins.version>
+			<java.level>8</java.level>
+	</properties>
+
 	<developers>
 		<developer>
 			<id>olhado</id>
 			<name>Mike Chmielewski</name>
 			<email>code@mikec.123mail.org</email>
 			<roles>
-                		<role>maintainer</role>
-            		</roles>
+				<role>maintainer</role>
+			</roles>
 		</developer>
 	</developers>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.jenkins-ci</groupId>
-			<artifactId>symbol-annotation</artifactId>
-			<version>1.14</version>
-		</dependency>
-	</dependencies>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.scm</groupId>
-						<artifactId>maven-scm-provider-gitexe</artifactId>
-						<version>1.9</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
 
 	<scm>
 		<connection>scm:git:ssh://github.com/jenkinsci/parameter-separator-plugin.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/parameter-separator-plugin.git</developerConnection>
 		<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
-	  <tag>HEAD</tag>
+		<tag>HEAD</tag>
 	</scm>
-	<!-- save the effort that configuration in %MAVEN_HOME%/conf/settings.xml -->
+
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>
@@ -67,4 +51,13 @@
 			<url>https://repo.jenkins-ci.org/public/</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jenkins-ci</groupId>
+			<artifactId>symbol-annotation</artifactId>
+			<version>1.14</version>
+		</dependency>
+	</dependencies>
+
 </project>

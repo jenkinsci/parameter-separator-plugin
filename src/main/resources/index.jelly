@@ -1,12 +1,12 @@
 <!--
- Copyright (c) 2014 Mike Chmielewski
- See the file license.txt for copying permission. 
+Copyright (c) 2014 Mike Chmielewski
+See the file license.txt for copying permission.
 -->
-
 
 <!--
-  This view is used to render the plugin list page.
+This view is used to render the plugin list page.
 -->
+<?jelly escape-by-default='true'?>
 <div>
-  Adds a static horizontal rule html tag as a Jenkins parameter
+	Adds a static horizontal rule html tag as a Jenkins parameter
 </div>

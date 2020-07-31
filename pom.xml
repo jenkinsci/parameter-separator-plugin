@@ -25,6 +25,11 @@
 			<id>olhado</id>
 			<name>Mike Chmielewski</name>
 			<email>code@mikec.123mail.org</email>
+		</developer>
+		<developer>
+			<id>pit3k</id>
+			<name>Piotr Paczynski</name>
+			<email>ppaczyn@gmail.com</email>
 			<roles>
 				<role>maintainer</role>
 			</roles>

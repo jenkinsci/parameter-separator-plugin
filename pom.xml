@@ -1,5 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
@@ -10,12 +14,13 @@
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
 	<version>1.3-SNAPSHOT</version>
+
 	<name>Parameter Separator Plugin</name>
 	<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
 
 	<properties>
-			<jenkins.version>2.164.1</jenkins.version>
-			<java.level>8</java.level>
+		<jenkins.version>2.164.1</jenkins.version>
+		<java.level>8</java.level>
 	</properties>
 
 	<developers>
@@ -28,9 +33,6 @@
 			<id>pit3k</id>
 			<name>Piotr Paczynski</name>
 			<email>ppaczyn@gmail.com</email>
-			<roles>
-				<role>maintainer</role>
-			</roles>
 		</developer>
 	</developers>
 
@@ -55,12 +57,5 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.jenkins-ci</groupId>
-			<artifactId>symbol-annotation</artifactId>
-			<version>1.14</version>
-		</dependency>
-	</dependencies>
 
 </project>

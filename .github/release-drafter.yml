@@ -1,0 +1,2 @@
+_extends: .github
+tag-template: parameter-separator-$NEXT_MINOR_VERSION

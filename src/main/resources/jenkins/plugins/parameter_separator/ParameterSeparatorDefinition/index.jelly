@@ -4,16 +4,16 @@ See the file license.txt for copying permission.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
-		xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
-		xmlns:i="jelly:fmt" xmlns:p="/lib/hudson/project">
-	<f:entry title="" description="">
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+	<f:block>
 		<div name="parameter">
 			<input type="hidden" name="name" value="${it.name}" />
 		</div>
-		<hr style="${it.computedSeparatorStyle}" />
-		<j:if test="${it.sectionHeader != null and it.sectionHeader != ''}">
-			<div style="${it.sectionHeaderStyle}">${it.sectionHeader}</div>
+		<hr style="${it.effectiveSeparatorStyle}" />
+		<j:if test="${it.needsSectionHeader()}">
+			<div style="${it.effectiveSectionHeaderStyle}">
+				<j:out value="${it.formattedSectionHeader}" />
+			</div>
 		</j:if>
-	</f:entry>
+	</f:block>
 </j:jelly>

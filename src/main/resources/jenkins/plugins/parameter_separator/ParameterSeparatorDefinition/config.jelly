@@ -4,17 +4,21 @@ See the file license.txt for copying permission.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-	<f:advanced title="Separator Styling...">
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:st="jelly:stapler">
+	<f:invisibleEntry>
+		<input name="_.name" type="hidden" value="${instance.name}" />
+	</f:invisibleEntry>
+	<f:entry title="Section Header" field="sectionHeader">
+		<f:textarea codemirror-mode="htmlmixed" codemirror-config="mode: 'text/html'"
+			previewEndpoint="/markupFormatter/previewDescription" />
+		<st:adjunct includes="jenkins.plugins.parameter_separator.parameter_separator" />
+	</f:entry>
+	<f:advanced title="Separator Styling">
 		<f:entry title="Separator Style" field="separatorStyle">
-			<f:textbox />
-		</f:entry>
-		<f:entry title="Section Header Text" field="sectionHeader">
-			<f:textbox />
+			<f:textarea />
 		</f:entry>
 		<f:entry title="Section Header Style" field="sectionHeaderStyle">
-			<f:textbox />
+			<f:textarea />
 		</f:entry>
 	</f:advanced>
-	<br />
 </j:jelly>

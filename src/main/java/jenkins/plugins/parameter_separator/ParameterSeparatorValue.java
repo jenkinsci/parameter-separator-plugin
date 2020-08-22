@@ -5,44 +5,44 @@
 
 package jenkins.plugins.parameter_separator;
 
+import javax.annotation.Nullable;
+
 import org.kohsuke.stapler.DataBoundConstructor;
+
+import com.google.common.base.Strings;
 
 import hudson.model.ParameterValue;
 
 @SuppressWarnings("serial")
 public class ParameterSeparatorValue extends ParameterValue {
 
-    private String separatorStyle = "";
-    private String sectionHeader = "";
-    private String sectionHeaderStyle = "";
-
-    public String getSectionHeader() {
-        return sectionHeader;
-    }
-
-    public void setSectionHeader(final String sh) {
-        this.sectionHeader = sh;
-    }
-
-    public String getSectionHeaderStyle() {
-        return sectionHeaderStyle;
-    }
-
-    public void setSectionHeaderStyle(final String shs) {
-        this.sectionHeaderStyle = shs;
-    }
-
-    public String getSeparatorStyle() {
-        return separatorStyle;
-    }
+    private final @Nullable String separatorStyle;
+    private final @Nullable String sectionHeader;
+    private final @Nullable String sectionHeaderStyle;
 
     @DataBoundConstructor
-    public ParameterSeparatorValue(final String name, final String separatorStyle, final String sectionHeader,
-            final String sectionHeaderStyle) {
-        super(name, "");
-        this.separatorStyle = separatorStyle;
-        this.sectionHeader = sectionHeader;
-        this.sectionHeaderStyle = sectionHeaderStyle;
+    public ParameterSeparatorValue(String name, String separatorStyle, String sectionHeader,
+            String sectionHeaderStyle) {
+        super(name);
+        this.separatorStyle = Strings.emptyToNull(separatorStyle);
+        this.sectionHeader = Strings.emptyToNull(sectionHeader);
+        this.sectionHeaderStyle = Strings.emptyToNull(sectionHeaderStyle);
+    }
+
+    public String getEffectiveSeparatorStyle() {
+        return Utils.getEffectiveSeparatorStyle(separatorStyle);
+    }
+
+    public boolean needsSectionHeader() {
+        return sectionHeader != null;
+    }
+
+    public String getFormattedSectionHeader() {
+        return Utils.getFormattedSectionHeader(sectionHeader);
+    }
+
+    public String getEffectiveSectionHeaderStyle() {
+        return Utils.getEffectiveSectionHeaderStyle(sectionHeaderStyle);
     }
 
     @Override
@@ -57,6 +57,7 @@ public class ParameterSeparatorValue extends ParameterValue {
 
     @Override
     public String getValue() {
-        return toString();
+        return "";
     }
+
 }

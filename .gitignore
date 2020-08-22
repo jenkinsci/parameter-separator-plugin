@@ -1,7 +1,7 @@
-target/
-work/
+/target/
+/work*
 
-# IDE
+# Eclipse IDE
 /.project
 /.classpath
 /.settings/

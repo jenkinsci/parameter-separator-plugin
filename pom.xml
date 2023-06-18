@@ -11,13 +11,12 @@
 
 	<artifactId>parameter-separator</artifactId>
 	<packaging>hpi</packaging>
-	<version>${revision}${changelist}</version>
+	<version>${changelist}</version>
 
 	<name>Parameter Separator Plugin</name>
 	<url>https://github.com/jenkinsci/parameter-separator-plugin</url>
 	<properties>
-		<revision>1.4</revision>
-		<changelist>-SNAPSHOT</changelist>
+		<changelist>999999-SNAPSHOT</changelist>
 		<gitHubRepo>jenkinsci/parameter-separator-plugin</gitHubRepo>
 		<jenkins.version>2.387.3</jenkins.version>
 	</properties>

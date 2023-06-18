@@ -1,6 +1,6 @@
 # Parameter Separator Plugin
 
-[![Build Status](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/master/badge/icon)](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/master/)
+[![Build Status](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/badge/icon)](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/)
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/parameter-separator.svg)](https://plugins.jenkins.io/parameter-separator)
 [![GitHub Release](https://img.shields.io/github/release/jenkinsci/parameter-separator-plugin.svg?label=changelog)](https://github.com/jenkinsci/parameter-separator-plugin/releases/latest)
 [![Jenkins Plugin Installs](https://img.shields.io/jenkins/plugin/i/parameter-separator.svg?color=blue)](https://plugins.jenkins.io/parameter-separator)

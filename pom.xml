@@ -18,7 +18,7 @@
 	<properties>
 		<changelist>999999-SNAPSHOT</changelist>
 		<gitHubRepo>jenkinsci/parameter-separator-plugin</gitHubRepo>
-		<jenkins.version>2.401.3</jenkins.version>
+		<jenkins.version>2.414.1</jenkins.version>
 	</properties>
 	<scm>
 		<connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
@@ -30,7 +30,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>io.jenkins.tools.bom</groupId>
-				<artifactId>bom-2.401.x</artifactId>
+				<artifactId>bom-2.414.x</artifactId>
 				<version>2401.v7a_d68f8d0b_09</version>
 				<scope>import</scope>
 				<type>pom</type>

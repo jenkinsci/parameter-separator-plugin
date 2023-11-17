@@ -18,7 +18,7 @@
 	<properties>
 		<changelist>999999-SNAPSHOT</changelist>
 		<gitHubRepo>jenkinsci/parameter-separator-plugin</gitHubRepo>
-		<jenkins.version>2.414.3</jenkins.version>
+		<jenkins.version>2.426.1</jenkins.version>
 	</properties>
 	<scm>
 		<connection>scm:git:https://github.com/${gitHubRepo}.git</connection>

@@ -5,27 +5,24 @@
 
 package jenkins.plugins.parameter_separator;
 
+import com.google.common.base.Strings;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import hudson.Extension;
+import hudson.model.ParameterDefinition;
+import hudson.model.ParameterValue;
+import hudson.model.PersistentDescriptor;
+import hudson.util.HttpResponses;
 import java.io.IOException;
 import java.util.UUID;
-
 import javax.annotation.Nullable;
-
+import net.sf.json.JSONObject;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.HttpResponse;
 import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.StaplerRequest;
 
-import com.google.common.base.Strings;
-
-import hudson.Extension;
-import hudson.model.ParameterDefinition;
-import hudson.model.ParameterValue;
-import hudson.model.PersistentDescriptor;
-import hudson.util.HttpResponses;
-import net.sf.json.JSONObject;
-
-@SuppressWarnings("serial")
+@SuppressFBWarnings("SE_NO_SERIALVERSIONID")
 public class ParameterSeparatorDefinition extends ParameterDefinition {
 
     private @Nullable String separatorStyle;
@@ -33,8 +30,8 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     private @Nullable String sectionHeaderStyle;
 
     @DataBoundConstructor
-    public ParameterSeparatorDefinition(String name, String separatorStyle, String sectionHeader,
-            String sectionHeaderStyle) {
+    public ParameterSeparatorDefinition(
+            String name, String separatorStyle, String sectionHeader, String sectionHeaderStyle) {
         super(Strings.isNullOrEmpty(name) ? ("separator-" + UUID.randomUUID().toString()) : name);
         this.separatorStyle = Strings.emptyToNull(separatorStyle);
         this.sectionHeader = Strings.emptyToNull(sectionHeader);
@@ -120,11 +117,12 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
             save();
         }
 
-        public HttpResponse doPreview(@QueryParameter String text, @QueryParameter String separatorStyle,
-                @QueryParameter String sectionHeaderStyle) throws IOException {
+        public HttpResponse doPreview(
+                @QueryParameter String text,
+                @QueryParameter String separatorStyle,
+                @QueryParameter String sectionHeaderStyle)
+                throws IOException {
             return HttpResponses.literalHtml(Utils.getPreview(text, separatorStyle, sectionHeaderStyle));
         }
-
     }
-
 }

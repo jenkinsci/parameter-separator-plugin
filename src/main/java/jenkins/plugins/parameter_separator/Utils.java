@@ -1,19 +1,15 @@
 package jenkins.plugins.parameter_separator;
 
+import com.google.common.base.Strings;
+import edu.umd.cs.findbugs.annotations.NonNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import hudson.ExtensionList;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Logger;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import org.apache.commons.lang.StringEscapeUtils;
-
-import com.google.common.base.Strings;
-
-import hudson.ExtensionList;
 import jenkins.model.Jenkins;
 import jenkins.plugins.parameter_separator.ParameterSeparatorDefinition.ParameterSeparatorDescriptor;
+import org.apache.commons.lang.StringEscapeUtils;
 
 class Utils {
 
@@ -23,9 +19,11 @@ class Utils {
         String formattedSectionHeader = getFormattedSectionHeader(sectionHeader);
         String effectiveSeparatorStyle = getEffectiveSeparatorStyle(separatorStyle);
         String effectiveSectionHeaderStyle = getEffectiveSectionHeaderStyle(sectionHeaderStyle);
-        return String.format("<hr style=\"%s\"/><div style=\"%s\">%s</div>",
+        return String.format(
+                "<hr style=\"%s\"/><div style=\"%s\">%s</div>",
                 StringEscapeUtils.escapeHtml(effectiveSeparatorStyle),
-                StringEscapeUtils.escapeHtml(effectiveSectionHeaderStyle), formattedSectionHeader);
+                StringEscapeUtils.escapeHtml(effectiveSectionHeaderStyle),
+                formattedSectionHeader);
     }
 
     public static String getEffectiveSeparatorStyle(@Nullable String separatorStyle) {
@@ -40,7 +38,7 @@ class Utils {
         return nonEmptyOptional(sectionHeader).map(Utils::doFormat).orElse("");
     }
 
-    private static String doFormat(@Nonnull String html) {
+    private static String doFormat(@NonNull String html) {
         try {
             return Jenkins.get().getMarkupFormatter().translate(html);
         } catch (IOException e) {
@@ -56,5 +54,4 @@ class Utils {
     private static ParameterSeparatorDescriptor getDescriptor() {
         return ExtensionList.lookupSingleton(ParameterSeparatorDefinition.ParameterSeparatorDescriptor.class);
     }
-
 }

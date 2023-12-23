@@ -15,6 +15,8 @@ class Utils {
 
     private static final Logger LOGGER = Logger.getLogger(Utils.class.getName());
 
+    private Utils() {}
+
     public static String getPreview(String sectionHeader, String separatorStyle, String sectionHeaderStyle) {
         String formattedSectionHeader = getFormattedSectionHeader(sectionHeader);
         String effectiveSeparatorStyle = getEffectiveSeparatorStyle(separatorStyle);

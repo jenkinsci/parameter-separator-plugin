@@ -5,15 +5,13 @@
 
 package jenkins.plugins.parameter_separator;
 
-import javax.annotation.Nullable;
-
+import com.google.common.base.Strings;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import hudson.model.ParameterValue;
 import org.kohsuke.stapler.DataBoundConstructor;
 
-import com.google.common.base.Strings;
-
-import hudson.model.ParameterValue;
-
-@SuppressWarnings("serial")
+@SuppressFBWarnings("SE_NO_SERIALVERSIONID")
 public class ParameterSeparatorValue extends ParameterValue {
 
     private final @Nullable String separatorStyle;
@@ -21,8 +19,8 @@ public class ParameterSeparatorValue extends ParameterValue {
     private final @Nullable String sectionHeaderStyle;
 
     @DataBoundConstructor
-    public ParameterSeparatorValue(String name, String separatorStyle, String sectionHeader,
-            String sectionHeaderStyle) {
+    public ParameterSeparatorValue(
+            String name, String separatorStyle, String sectionHeader, String sectionHeaderStyle) {
         super(name);
         this.separatorStyle = Strings.emptyToNull(separatorStyle);
         this.sectionHeader = Strings.emptyToNull(sectionHeader);
@@ -59,5 +57,4 @@ public class ParameterSeparatorValue extends ParameterValue {
     public String getValue() {
         return "";
     }
-
 }

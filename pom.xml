@@ -25,7 +25,7 @@
   <properties>
     <changelist>999999-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/parameter-separator-plugin</gitHubRepo>
-    <jenkins.version>2.426.3</jenkins.version>
+    <jenkins.version>2.440.1</jenkins.version>
     <spotbugs.effort>Max</spotbugs.effort>
     <spotbugs.threshold>Low</spotbugs.threshold>
     <spotless.check.skip>false</spotless.check.skip>
@@ -35,7 +35,7 @@
     <dependencies>
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
-        <artifactId>bom-2.426.x</artifactId>
+        <artifactId>bom-2.440.x</artifactId>
         <version>2839.v003b_4d9d24fd</version>
         <type>pom</type>
         <scope>import</scope>

@@ -29,14 +29,13 @@
     <spotbugs.effort>Max</spotbugs.effort>
     <spotbugs.threshold>Low</spotbugs.threshold>
     <spotless.check.skip>false</spotless.check.skip>
-    <configuration-as-code.version>1836.vccda_4a_122a_a_e</configuration-as-code.version>
   </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
         <artifactId>bom-2.440.x</artifactId>
-        <version>3221.ve8f7b_fdd149d</version>
+        <version>3258.vcdcf15936a_fd</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -47,13 +46,11 @@
     <dependency>
       <groupId>io.jenkins</groupId>
       <artifactId>configuration-as-code</artifactId>
-      <version>${configuration-as-code.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.jenkins.configuration-as-code</groupId>
       <artifactId>test-harness</artifactId>
-      <version>${configuration-as-code.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

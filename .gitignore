@@ -1,5 +1,6 @@
 /target/
 /work*
+/.idea
 
 # Eclipse IDE
 /.project

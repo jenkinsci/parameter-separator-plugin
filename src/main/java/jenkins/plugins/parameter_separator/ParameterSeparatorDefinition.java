@@ -20,7 +20,7 @@ import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.HttpResponse;
 import org.kohsuke.stapler.QueryParameter;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 @SuppressFBWarnings("SE_NO_SERIALVERSIONID")
 public class ParameterSeparatorDefinition extends ParameterDefinition {
@@ -72,12 +72,12 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
     }
 
     @Override
-    public ParameterValue createValue(StaplerRequest request) {
+    public ParameterValue createValue(StaplerRequest2 request) {
         return getDefaultParameterValue();
     }
 
     @Override
-    public ParameterValue createValue(StaplerRequest request, JSONObject jObj) {
+    public ParameterValue createValue(StaplerRequest2 request, JSONObject jObj) {
         return getDefaultParameterValue();
     }
 
@@ -89,7 +89,7 @@ public class ParameterSeparatorDefinition extends ParameterDefinition {
         private String globalSectionHeaderStyle = "font-weight: bold;";
 
         @Override
-        public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
+        public boolean configure(StaplerRequest2 req, JSONObject json) throws FormException {
             req.bindJSON(this, json.getJSONObject("parameter_separator"));
             return true;
         }

@@ -21,11 +21,11 @@ class Utils {
         String formattedSectionHeader = getFormattedSectionHeader(sectionHeader);
         String effectiveSeparatorStyle = getEffectiveSeparatorStyle(separatorStyle);
         String effectiveSectionHeaderStyle = getEffectiveSectionHeaderStyle(sectionHeaderStyle);
-        return String.format(
-                "<hr style=\"%s\"/><div style=\"%s\">%s</div>",
-                StringEscapeUtils.escapeHtml(effectiveSeparatorStyle),
-                StringEscapeUtils.escapeHtml(effectiveSectionHeaderStyle),
-                formattedSectionHeader);
+        return "<hr style=\"%s\"/><div style=\"%s\">%s</div>"
+                .formatted(
+                        StringEscapeUtils.escapeHtml(effectiveSeparatorStyle),
+                        StringEscapeUtils.escapeHtml(effectiveSectionHeaderStyle),
+                        formattedSectionHeader);
     }
 
     public static String getEffectiveSeparatorStyle(@Nullable String separatorStyle) {

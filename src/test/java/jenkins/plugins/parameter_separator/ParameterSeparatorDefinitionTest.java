@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.jvnet.hudson.test.JenkinsRule;
 import org.jvnet.hudson.test.junit.jupiter.WithJenkins;
 import org.kohsuke.stapler.HttpResponse;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 @WithJenkins
 public class ParameterSeparatorDefinitionTest {
@@ -23,7 +23,7 @@ public class ParameterSeparatorDefinitionTest {
     @Test
     public void shouldConfigure(JenkinsRule jenkinsRule) throws Exception {
         ParameterSeparatorDescriptor descriptor = ExtensionList.lookupSingleton(ParameterSeparatorDescriptor.class);
-        StaplerRequest request = mock(StaplerRequest.class);
+        StaplerRequest2 request = mock(StaplerRequest2.class);
         JSONObject json = mock(JSONObject.class);
         JSONObject result = mock(JSONObject.class);
         doReturn(result).when(json).getJSONObject("parameter_separator");
@@ -71,12 +71,12 @@ public class ParameterSeparatorDefinitionTest {
         ParameterSeparatorDefinition definition = new ParameterSeparatorDefinition(
                 "the name", "the style", "<h1>the section header</h1>", "<h1>the header style</h1>");
         assertThat(
-                definition.createValue(mock(StaplerRequest.class)),
+                definition.createValue(mock(StaplerRequest2.class)),
                 is(new ParameterSeparatorValue(
                         "the name", "the style", "<h1>the section header</h1>", "<h1>the header style</h1>")));
         JSONObject json = mock(JSONObject.class);
         assertThat(
-                definition.createValue(mock(StaplerRequest.class), json),
+                definition.createValue(mock(StaplerRequest2.class), json),
                 is(new ParameterSeparatorValue(
                         "the name", "the style", "<h1>the section header</h1>", "<h1>the header style</h1>")));
     }

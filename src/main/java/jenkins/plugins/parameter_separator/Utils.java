@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.logging.Logger;
 import jenkins.model.Jenkins;
 import jenkins.plugins.parameter_separator.ParameterSeparatorDefinition.ParameterSeparatorDescriptor;
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 class Utils {
 
@@ -23,8 +23,8 @@ class Utils {
         String effectiveSectionHeaderStyle = getEffectiveSectionHeaderStyle(sectionHeaderStyle);
         return String.format(
                 "<hr style=\"%s\"/><div style=\"%s\">%s</div>",
-                StringEscapeUtils.escapeHtml(effectiveSeparatorStyle),
-                StringEscapeUtils.escapeHtml(effectiveSectionHeaderStyle),
+                StringEscapeUtils.escapeHtml4(effectiveSeparatorStyle),
+                StringEscapeUtils.escapeHtml4(effectiveSectionHeaderStyle),
                 formattedSectionHeader);
     }
 

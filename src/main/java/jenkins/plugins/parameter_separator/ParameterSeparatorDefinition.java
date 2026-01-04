@@ -6,6 +6,7 @@
 package jenkins.plugins.parameter_separator;
 
 import com.google.common.base.Strings;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.Extension;
 import hudson.model.ParameterDefinition;
@@ -14,7 +15,6 @@ import hudson.model.PersistentDescriptor;
 import hudson.util.HttpResponses;
 import java.io.IOException;
 import java.util.UUID;
-import javax.annotation.Nullable;
 import net.sf.json.JSONObject;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;

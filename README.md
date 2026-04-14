@@ -1,6 +1,6 @@
 # Parameter Separator Plugin
 
-[![Build Status](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/badge/icon)](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/)
+[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fparameter-separator-plugin%2Fmain)](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/)
 [![Coverage](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/badge/icon?status=${instructionCoverage}&subject=coverage&color=${colorInstructionCoverage})](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main)
 [![LOC](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main/badge/icon?job=test&status=${lineOfCode}&subject=line%20of%20code&color=blue)](https://ci.jenkins.io/job/Plugins/job/parameter-separator-plugin/job/main)
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/parameter-separator.svg)](https://plugins.jenkins.io/parameter-separator)
